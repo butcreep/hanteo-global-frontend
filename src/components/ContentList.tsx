@@ -5,7 +5,7 @@ import "swiper/css";
 import { useInfiniteQuery } from "react-query";
 import { fetchCategoryItems, FetchResponse } from "@/api/fetchCategoryItems";
 import type { Category } from "@/constants/categories";
-// 📌 Props 타입 정의
+
 interface ContentListProps {
   categories: readonly Category[];
   activeIndex: number;
@@ -23,7 +23,7 @@ function CategoryContent({ category }: CategoryContentProps) {
     FetchResponse,
     unknown,
     FetchResponse,
-    [string, string]
+    [string, Category]
   >(["categoryItems", category], fetchCategoryItems, {
     getNextPageParam: lastPage => lastPage.nextPage,
   });

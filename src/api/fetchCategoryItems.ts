@@ -16,10 +16,10 @@ export async function fetchCategoryItems({
   queryKey,
 }: {
   pageParam?: number;
-  queryKey: [string, Category];
+  queryKey: ["categoryItems", Category];
 }): Promise<FetchResponse> {
   const [, category] = queryKey;
-  await new Promise(res => setTimeout(res, 500)); // delay simulation
+  await new Promise(res => setTimeout(res, 500));
   const start = pageParam;
 
   const items = Array.from({ length: 10 }, (_, i) => ({
