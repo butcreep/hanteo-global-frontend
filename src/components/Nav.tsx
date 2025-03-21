@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
+import type { Category } from "../constants/categories";
 
 interface NavProps {
-  categories: string[];
+  categories: readonly Category[];
   activeIndex: number;
   onCategoryClick: (index: number) => void;
 }
