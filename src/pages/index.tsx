@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         <MainSlide />
       </div>
 
-      <div className="overflow-hidden h-[400px]">
+      <div className="overflow-hidden h-auto">
         <ContentList
           categories={CATEGORIES}
           activeIndex={activeCategory}
