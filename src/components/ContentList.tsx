@@ -3,21 +3,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { useInfiniteQuery } from "react-query";
-import { fetchCategoryItems, FetchResponse } from "../api/fetchCategoryItems";
-
+import { fetchCategoryItems, FetchResponse } from "@/api/fetchCategoryItems";
+import type { Category } from "@/constants/categories";
 // 📌 Props 타입 정의
 interface ContentListProps {
-  categories: string[];
+  categories: readonly Category[];
   activeIndex: number;
   onCategoryChange: (index: number) => void;
 }
 
 interface CategoryContentProps {
-  category: string;
+  category: Category;
 }
 
-// 원하면 mockData.ts에 더미 데이터 모듈화하거나
-// msw(Mock Service Worker) 같은 라이브러리로 실제 API처럼 동작시킬 수도 있어요!
+//  mockData.ts에 더미 데이터 모듈화하거나
+// msw(Mock Service Worker) 같은 라이브러리로 실제 API처럼 동작시키기
 function CategoryContent({ category }: CategoryContentProps) {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery<
     FetchResponse,

@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
-import SwiperNav from "../components/Nav";
-import MainSlide from "../components/MainSlide";
-import { CATEGORIES } from "../constants/categories";
+import Layout from "@/components/Layout";
+import SwiperNav from "@/components/Nav";
+import MainSlide from "@/components/MainSlide";
+import { CATEGORIES } from "@/constants/categories";
 
 // ✅ SSR 비활성화로 Swiper 오류 방지 (CSR에서만 렌더링)
-const ContentList = dynamic(() => import("../components/ContentList"), { ssr: false });
+const ContentList = dynamic(() => import("@/components/ContentList"), { ssr: false });
 
 const Home: NextPage = () => {
   const [activeCategory, setActiveCategory] = useState(0);
