@@ -34,7 +34,9 @@ function SwiperNav({ categories, activeIndex, onCategoryClick }: NavProps) {
         {categories.map((cat, idx) => (
           <SwiperSlide key={idx} style={{ width: "auto" }}>
             <div
-              ref={el => (itemRefs.current[idx] = el)}
+              ref={el => {
+                itemRefs.current[idx] = el;
+              }}
               onClick={() => onCategoryClick(idx)}
               className={`font-bold whitespace-nowrap px-2 cursor-pointer ${
                 activeIndex === idx ? "text-blue-500" : "text-gray-600"
