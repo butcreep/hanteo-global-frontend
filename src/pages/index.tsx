@@ -7,7 +7,9 @@ import MainSlide from "@/components/MainSlide";
 import { CATEGORIES } from "@/constants/categories";
 
 // ✅ SSR 비활성화로 Swiper 오류 방지 (CSR에서만 렌더링)
-const ContentList = dynamic(() => import("@/components/ContentList"), { ssr: false });
+const ContentList = dynamic(() => import("@/components/ContentList"), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -18,11 +20,11 @@ const Home: NextPage = () => {
         <SwiperNav
           categories={CATEGORIES}
           activeIndex={activeCategory}
-          onCategoryClick={index => setActiveCategory(index)}
+          onCategoryClick={(index) => setActiveCategory(index)}
         />
       </div>
 
-      <div className="h-[200px]">
+      <div className="h-[500px]">
         <MainSlide />
       </div>
 
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
         <ContentList
           categories={CATEGORIES}
           activeIndex={activeCategory}
-          onCategoryChange={index => setActiveCategory(index)}
+          onCategoryChange={(index) => setActiveCategory(index)}
         />
       </div>
     </Layout>
