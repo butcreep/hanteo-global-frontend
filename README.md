@@ -2,6 +2,8 @@
 
 이 페이지는 **Next.js**, **TypeScript**, **Tailwind CSS**, **React Query**, **Swiper**, 그리고 **Emotion** 등을 사용하여 UI를 구현하였습니다.
 
+- 🔗 Vercel 배포 주소: https://hanteo-global-frontend.vercel.app/
+
 ---
 
 ## 🧩 주요 기능
