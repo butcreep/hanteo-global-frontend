@@ -20,16 +20,16 @@ function SwiperNav({ categories, activeIndex, onCategoryClick }: NavProps) {
   }, [activeIndex]);
 
   return (
-    <div className="border-b border-gray-300 px-4 py-2">
+    <div className="bg-lightPink px-4 py-2 border-b border-gray-200">
       <Swiper slidesPerView="auto" spaceBetween={12} freeMode className="w-full">
         {categories.map((cat, idx) => (
           <SwiperSlide key={idx} style={{ width: "auto" }}>
             <div
               ref={el => (itemRefs.current[idx] = el)}
               onClick={() => onCategoryClick(idx)}
-              className={`font-bold whitespace-nowrap px-2 cursor-pointer transition-colors duration-200 ${
-                activeIndex === idx ? "text-blue-500" : "text-gray-600"
-              }`}
+              className={`px-3 py-1 rounded-full text-sm font-semibold cursor-pointer transition
+                ${activeIndex === idx ? "bg-[#FF5181] text-white" : "text-black"}
+              `}
             >
               {cat}
             </div>

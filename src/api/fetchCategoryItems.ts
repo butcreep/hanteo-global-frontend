@@ -11,6 +11,8 @@ export interface FetchResponse {
   hasMore: boolean;
 }
 
+const ITEMS_PER_PAGE = 7;
+
 export async function fetchCategoryItems({
   pageParam = 0,
   queryKey,
@@ -20,16 +22,16 @@ export async function fetchCategoryItems({
 }): Promise<FetchResponse> {
   const [, category] = queryKey;
   await new Promise(res => setTimeout(res, 500));
-  const start = pageParam;
 
-  const items = Array.from({ length: 10 }, (_, i) => ({
+  const start = pageParam;
+  const items = Array.from({ length: ITEMS_PER_PAGE }, (_, i) => ({
     id: start + i,
     text: `${category} ${start + i + 1}`,
   }));
 
   return {
     items,
-    nextPage: start + 10,
+    nextPage: start + ITEMS_PER_PAGE,
     hasMore: true,
   };
 }
