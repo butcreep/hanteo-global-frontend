@@ -20,7 +20,6 @@ function CategoryContent({ category }: CategoryContentProps) {
   const items = data?.pages?.flatMap(page => page.items) || [];
   const observerRef = useRef<IntersectionObserver | null>(null);
   const footerRef = useRef<HTMLDivElement | null>(null);
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [allowFetch, setAllowFetch] = useState(false);
 
@@ -64,11 +63,7 @@ function CategoryContent({ category }: CategoryContentProps) {
   }, [handleObserver]);
 
   return (
-    <div
-      ref={scrollContainerRef}
-      onScroll={handleScroll}
-      className="h-full overflow-y-auto px-4 pt-3 pb-3 mt-3 bg-gray-100 scrollbar-hide"
-    >
+    <div onScroll={handleScroll} className="h-full overflow-y-auto px-4 pt-3 pb-3 mt-3 bg-gray-100 scrollbar-hide">
       <h2 className="font-bold text-sm mb-3">콘텐츠 큐레이션</h2>
 
       <ul className="list-none p-0 m-0 space-y-3">
