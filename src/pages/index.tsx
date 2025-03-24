@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import Layout from "@/components/Layout";
 import SwiperNav from "@/components/Nav";
 import MainSlide from "@/components/MainSlide";
-// import LikeButton from "@/components/LikeButton";
 import { CATEGORIES } from "@/constants/categories";
 import LikeButton from "@/components/LikeButton";
 
