@@ -16,9 +16,9 @@ const Home: NextPage = () => {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-[425px] mx-auto">
+    <div className="flex flex-col justify-center items-center h-screen w-[425px] mx-auto ">
       <Layout>
-        <div className="h-[50px]">
+        <div className="h-[50px] overflow-hidden">
           <SwiperNav
             categories={CATEGORIES}
             activeIndex={activeCategory}
@@ -26,11 +26,11 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <div className="h-[270px] pt-5">
+        <div className="h-[270px] pt-5 overflow-hidden">
           <MainSlide />
         </div>
 
-        <div className="overflow-hidden h-auto">
+        <div className="flex-1 overflow-y-auto">
           <ContentList
             categories={CATEGORIES}
             activeIndex={activeCategory}
